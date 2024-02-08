@@ -28,5 +28,3 @@ func (r *ProjectRepository) GetProjectByID(id uint) (*models.Project, error) {
 	}
 	return &project, nil
 }
-
-// Implement other project-related repository functions as needed.

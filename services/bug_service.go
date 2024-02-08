@@ -31,5 +31,3 @@ func (s *BugService) GetBugByID(id uint) (*models.Bug, error) {
 
 	return s.bugRepo.GetBugByID(id)
 }
-
-// Implement other bug-related service functions as needed.

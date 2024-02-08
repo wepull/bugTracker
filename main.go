@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/wepull/bugTracker/database"
 	"github.com/wepull/bugTracker/routes"
 )
@@ -13,6 +15,9 @@ func main() {
 	defer db.Close()
 
 	// Set up your router and start the server
-	router := routes.SetupRouter(db)
-	router.Run(":8080")
+	err = routes.StartHTTPSvr()
+	if err != nil {
+		fmt.Printf("Error Starting the Bug Tracker Backend Server: %v\n", err)
+		return
+	}
 }

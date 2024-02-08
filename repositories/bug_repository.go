@@ -28,5 +28,3 @@ func (r *BugRepository) GetBugByID(id uint) (*models.Bug, error) {
 	}
 	return &bug, nil
 }
-
-// Implement other bug-related repository functions as needed.

@@ -29,6 +29,14 @@ func (r *UserRepository) GetUserByID(id uint) (*models.User, error) {
 	return &user, nil
 }
 
+func (r *UserRepository) GetUserByEmail(email string) (*models.User, error) {
+	var user models.User
+	if err := r.db.Where("email = ?", email).First(&user).Error; err != nil {
+		return nil, err
+	}
+	return &user, nil
+}
+
 // GetUserByUsername gets a user by username from the database.
 func (r *UserRepository) GetUserByUsername(username string) (*models.User, error) {
 	var user models.User
@@ -37,5 +45,3 @@ func (r *UserRepository) GetUserByUsername(username string) (*models.User, error
 	}
 	return &user, nil
 }
-
-// Implement other user-related repository functions as needed.

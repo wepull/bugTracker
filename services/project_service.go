@@ -30,5 +30,3 @@ func (s *ProjectService) GetProjectByID(id uint) (*models.Project, error) {
 
 	return s.projectRepo.GetProjectByID(id)
 }
-
-// Implement other project-related service functions as needed.
